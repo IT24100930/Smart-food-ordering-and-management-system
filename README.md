@@ -195,5 +195,4 @@ These parts are still simple and can be improved later:
 - Add unit and integration tests for controllers and services
 
 ## Author Note
-
-This project is designed in a simple and understandable way, suitable for a university project submission. The structure is organized, but the code avoids unnecessary complexity so it is easier to study and explain.
+The structure is organized, but the code avoids unnecessary complexity so it is easier to study and explain.
