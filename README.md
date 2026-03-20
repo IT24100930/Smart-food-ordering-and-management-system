@@ -1,6 +1,6 @@
 # Smart Food Ordering and Management System
 
-Smart Food Ordering and Management System is a university-level full stack project built with React, Spring Boot, and MySQL. Customers can register, log in, browse foods, place orders, and track them. Admin users can view dashboard details, users, foods, and orders.
+Smart Food Ordering and Management System is a full stack project built with React, Spring Boot, and MySQL. Customers can register, log in, browse foods, place orders, and track them. Admin users can view dashboard details, users, foods, and orders.
 
 ## Project Structure
 
@@ -173,7 +173,7 @@ The following were checked successfully:
 - The backend auto-creates the database if it does not already exist.
 - The backend also seeds initial categories, foods, and default users.
 - Orders are stored in MySQL and visible in admin order management.
-- Login does not use JWT yet. This is a simple university project MVP.
+- Login does not use JWT yet.
 
 ## Limitations
 
