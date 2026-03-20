@@ -1,0 +1,32 @@
+.hero-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.hero-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}

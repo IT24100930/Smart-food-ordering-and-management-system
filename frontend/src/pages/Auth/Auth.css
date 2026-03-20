@@ -1,0 +1,12 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  width: min(100%, 560px);
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}

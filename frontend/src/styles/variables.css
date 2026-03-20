@@ -1,0 +1,15 @@
+:root {
+  --primary: #b6462f;
+  --secondary: #1f3c3f;
+  --accent: #f0a23a;
+  --background: #f8f2e9;
+  --card-bg: #fff7ed;
+  --text-main: #1f2937;
+  --text-soft: #5b6470;
+  --border-color: #e5d8c6;
+  --soft-yellow: #fde7bf;
+  --success: #2f855a;
+  --warning: #b7791f;
+  --info: #2b6cb0;
+  --shadow-soft: 0 14px 30px rgba(120, 90, 40, 0.12);
+}

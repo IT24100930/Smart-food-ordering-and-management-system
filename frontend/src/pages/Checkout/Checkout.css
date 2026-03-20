@@ -1,0 +1,12 @@
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.checkout-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+}

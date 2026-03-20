@@ -1,0 +1,6 @@
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
