@@ -7,7 +7,7 @@ function Orders() {
   const { orders } = useOrders();
 
   return (
-    <section>
+    <section className="orders-page">
       <PageHeader
         title="My Orders"
         description="Track your current and previous orders here."
