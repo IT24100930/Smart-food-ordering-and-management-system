@@ -1,130 +1,161 @@
 # Smart Food Ordering and Management System
 
-Smart Food Ordering and Management System is a full stack project built with React, Spring Boot, and MySQL. Customers can register, log in, browse foods, place orders, and track them. Admin users can view dashboard details, users, foods, and orders.
+This is a full stack university project built with React, Spring Boot, and MySQL.
+
+The system includes:
+
+- customer registration and login
+- food browsing by category
+- cart and checkout flow
+- order placement and order tracking
+- admin dashboard
+- admin food, user, and order management
+
+## Tech Stack
+
+- Frontend: React, Vite, React Router
+- Backend: Spring Boot, Spring Data JPA
+- Database: MySQL
+- Tools: npm, Maven Wrapper
 
 ## Project Structure
 
 ```text
 Smart-food-ordering-and-management-system/
-├── frontend/   # React + Vite frontend
-├── backend/    # Spring Boot backend
-├── database/   # SQL scripts
-└── README.md
+|- frontend/
+|- backend/
+|- database/
+`- README.md
 ```
 
-## Technology Stack
+## Prerequisites
 
-- Frontend: React, Vite, React Router
-- Backend: Spring Boot, Spring Data JPA
-- Database: MySQL
-- Build Tools: npm, Maven Wrapper
-
-## Main Features
-
-- User registration and login
-- Customer and admin roles
-- Food category and food listing
-- Add to cart and checkout
-- Order creation and order tracking
-- Admin dashboard summary
-- Admin order management
-- Admin user management
-- Add new food items from admin panel
-- Simple chatbot widget on frontend
-
-## Current Working Scope
-
-This project is now a working MVP.
-
-- Frontend is connected to the backend through real API calls
-- Backend is connected to MySQL
-- Data is stored in the database
-- Demo seed data is created automatically when the backend starts
-
-## Default Admin Account
-
-- Email: `admin@smartfood.com`
-- Password: `admin123`
-
-## Requirements
-
-Before running the project, make sure you have:
+Make sure you have these installed before running the project:
 
 - Java 17
 - Node.js and npm
-- XAMPP MySQL running on port `3306`
+- XAMPP or MySQL Server
 
-## Database Setup
+## Database Requirements
 
-The backend is configured for MySQL using:
+The backend is configured to use MySQL with these default values:
 
-- Database name: `smart_food_db`
 - Host: `localhost`
 - Port: `3306`
-- Default username: `root`
-- Default password: blank
+- Database: `smart_food_db`
+- Username: `root`
+- Password: blank
 
-Backend configuration is in:
+Backend configuration file:
 
-- [backend/src/main/resources/application.properties](C:/Users/USER/Documents/GitHub/Smart-food-ordering-and-management-system/backend/src/main/resources/application.properties)
+- `backend/src/main/resources/application.properties`
 
-If your MySQL root account has a password, update:
+If your MySQL username or password is different, update these lines:
 
 ```properties
 spring.datasource.username=${DB_USERNAME:root}
 spring.datasource.password=${DB_PASSWORD:}
 ```
 
-You can also create and inspect the database manually using:
+You can also use the SQL files in the `database` folder:
 
-- [database/schema.sql](C:/Users/USER/Documents/GitHub/Smart-food-ordering-and-management-system/database/schema.sql)
-- [database/seed.sql](C:/Users/USER/Documents/GitHub/Smart-food-ordering-and-management-system/database/seed.sql)
-- [database/queries.sql](C:/Users/USER/Documents/GitHub/Smart-food-ordering-and-management-system/database/queries.sql)
+- `database/schema.sql`
+- `database/seed.sql`
+- `database/queries.sql`
 
-## How to Run
+Note:
+- The backend already uses `createDatabaseIfNotExist=true`
+- The backend also seeds default categories, foods, and users automatically on startup
+
+## Default Admin Account
+
+Use this account to log in as admin:
+
+- Email: `admin@smartfood.com`
+- Password: `admin123`
+
+## Setup Instructions
 
 ### 1. Start MySQL
 
-Open XAMPP and start MySQL on port `3306`.
+If you are using XAMPP:
+
+1. Open XAMPP Control Panel
+2. Start `MySQL`
+3. Make sure it runs on port `3306`
 
 ### 2. Run the Backend
+
+Open a terminal in the project root and run:
 
 ```bash
 cd backend
 .\mvnw.cmd spring-boot:run
 ```
 
-Backend runs on:
+Backend URL:
 
 ```text
 http://localhost:8080
 ```
 
+If you are not on Windows, use:
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
 ### 3. Run the Frontend
 
-Open another terminal:
+Open a second terminal and run:
 
 ```bash
 cd frontend
-npm.cmd install
-npm.cmd run dev
+npm install
+npm run dev
 ```
 
-Frontend runs on:
+Frontend URL:
 
 ```text
 http://localhost:5173
 ```
 
-## Important Frontend Config
+## Frontend Environment
 
-Frontend API base URL is set in:
+Frontend environment file:
 
-- [frontend/.env](C:/Users/USER/Documents/GitHub/Smart-food-ordering-and-management-system/frontend/.env)
+- `frontend/.env`
+
+Current API configuration:
 
 ```env
 VITE_API_URL=http://localhost:8080/api
 ```
+
+If your backend runs on a different host or port, update this value.
+
+## How to Use the Project
+
+### Customer Flow
+
+1. Open `http://localhost:5173`
+2. Register a new account
+3. Log in
+4. Open the menu
+5. Add food items to the cart
+6. Checkout and place an order
+7. View the order in the orders page
+
+### Admin Flow
+
+1. Log in with `admin@smartfood.com`
+2. Open the admin dashboard
+3. View users
+4. View orders
+5. Add food items
+6. Check dashboard summary values
 
 ## Main API Endpoints
 
@@ -153,46 +184,76 @@ VITE_API_URL=http://localhost:8080/api
 - `GET /api/admin/users`
 - `GET /api/admin/orders`
 
-## Verified Functions
+## Verified Working Parts
 
-The following were checked successfully:
+The following parts were tested successfully:
 
-- Frontend production build with `npm.cmd run build`
-- Backend test run with `.\mvnw.cmd test`
-- `GET /api/foods`
-- `GET /api/categories`
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `POST /api/orders`
-- `GET /api/orders?email=...`
-- `GET /api/admin/orders`
-- `GET /api/admin/dashboard-summary`
+- frontend build using `npm run build`
+- backend test using `.\mvnw.cmd test`
+- food loading from backend
+- category loading from backend
+- user registration
+- user login
+- order creation
+- order loading by email
+- admin orders endpoint
+- admin dashboard summary endpoint
 
-## Useful Notes
+## Troubleshooting
 
-- The backend auto-creates the database if it does not already exist.
-- The backend also seeds initial categories, foods, and default users.
-- Orders are stored in MySQL and visible in admin order management.
-- Login does not use JWT yet.
+### MySQL connection error
+
+Check these:
+
+- MySQL is running in XAMPP
+- port `3306` is not blocked
+- username and password in `application.properties` are correct
+
+### Frontend cannot connect to backend
+
+Check these:
+
+- backend is running on `http://localhost:8080`
+- frontend `.env` contains `VITE_API_URL=http://localhost:8080/api`
+- no firewall is blocking local ports
+
+### PowerShell blocks npm
+
+If `npm` gives a PowerShell script error, use:
+
+```bash
+npm.cmd install
+npm.cmd run dev
+```
+
+### Maven command not found
+
+Use the Maven wrapper included in the project:
+
+```bash
+cd backend
+.\mvnw.cmd spring-boot:run
+```
 
 ## Limitations
 
-These parts are still simple and can be improved later:
+This project is working as an MVP, but some parts are still simple:
 
-- No JWT authentication
-- No advanced role-based backend security
-- No payment gateway integration
-- No delete/update for every admin module
-- Chatbot is still a simple frontend helper
+- no JWT authentication
+- no advanced backend authorization
+- no real payment gateway
+- no full update/delete support in every admin module
+- chatbot is a simple helper widget
 
-## Recommended Next Improvements
+## Future Improvements
 
-- Add JWT authentication and protected backend routes
-- Add update/delete for foods, users, and orders
-- Add inventory update logic when orders are placed
-- Add better reports and charts
-- Add Swagger or API documentation
-- Add unit and integration tests for controllers and services
+- add JWT authentication
+- add update and delete for foods and orders
+- reduce food stock automatically after checkout
+- improve reports and charts
+- add Swagger API documentation
+- add more backend tests
 
-## Author Note
-The structure is organized, but the code avoids unnecessary complexity so it is easier to study and explain.
+## Summary
+
+This project is ready to run for development and demonstration. It is designed to stay simple and understandable for a university submission while still using a real backend and MySQL database.
