@@ -1,0 +1,47 @@
+.cart-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.cart-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.cart-item,
+.summary-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.cart-actions,
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.quantity-box button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--soft-yellow);
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-weight: 700;
+}

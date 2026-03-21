@@ -1,0 +1,13 @@
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.category-card,
+.food-form {
+  background: white;
+  border-radius: 20px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-soft);
+}

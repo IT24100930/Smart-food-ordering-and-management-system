@@ -1,0 +1,20 @@
+@media (max-width: 900px) {
+  .hero-section,
+  .feature-grid,
+  .cart-layout,
+  .checkout-layout,
+  .dashboard-grid,
+  .admin-grid,
+  .admin-main,
+  .details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar,
+  .nav-links,
+  .nav-actions,
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
