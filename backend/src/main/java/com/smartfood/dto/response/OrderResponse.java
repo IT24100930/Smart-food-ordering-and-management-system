@@ -10,6 +10,7 @@ import java.util.List;
 @Builder
 public class OrderResponse {
     private String id;
+    private String userEmail;
     private String customerName;
     private String phone;
     private String address;

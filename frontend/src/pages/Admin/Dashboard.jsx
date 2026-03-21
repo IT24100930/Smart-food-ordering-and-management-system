@@ -36,15 +36,21 @@ function Dashboard() {
         description="Monitor key values of the smart food ordering system."
       />
       <div className="dashboard-grid">
-        <DashboardCard title="Foods" value={summary.totalFoods} helpText="Menu items in the system" />
-        <DashboardCard title="Users" value={summary.totalUsers} helpText="Registered demo users" />
-        <DashboardCard title="Orders" value={summary.totalOrders} helpText="Orders in the system" />
-        <DashboardCard title="Revenue" value={formatCurrency(summary.revenue)} helpText="Estimated income" />
+        <DashboardCard title="Foods" value={summary.totalFoods} helpText="Menu items in the system" tone="warm" />
+        <DashboardCard title="Users" value={summary.totalUsers} helpText="Registered demo users" tone="cool" />
+        <DashboardCard title="Orders" value={summary.totalOrders} helpText="Orders in the system" tone="accent" />
+        <DashboardCard title="Revenue" value={formatCurrency(summary.revenue)} helpText="Estimated income" tone="success" />
       </div>
       <div className="admin-grid">
         <SalesChart orders={orders} />
         <div className="table-card">
-          <h3>Inventory Overview</h3>
+          <div className="chart-header">
+            <div>
+              <p className="eyebrow">Stock Status</p>
+              <h3>Inventory Overview</h3>
+            </div>
+            <span className="chart-badge">{foods.length} foods</span>
+          </div>
           <InventoryTable foods={foods} />
         </div>
       </div>
