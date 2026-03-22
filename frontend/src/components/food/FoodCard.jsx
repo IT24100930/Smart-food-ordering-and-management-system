@@ -1,7 +1,7 @@
 import Button from "../common/Button";
 import formatCurrency from "../../utils/formatCurrency";
 
-function FoodCard({ food, onAddToCart }) {
+function FoodCard({ food, onAddToCart, onRemoveFromCart, inCart }) {
   return (
     <article className="food-card">
       <img src={food.image} alt={food.name} />
@@ -16,7 +16,13 @@ function FoodCard({ food, onAddToCart }) {
           <span>{food.prepTime}</span>
           <span>{food.rating} / 5</span>
         </div>
-        <Button onClick={() => onAddToCart(food)}>Add to Cart</Button>
+        {inCart ? (
+          <Button variant="secondary" onClick={() => onRemoveFromCart(food)}>
+            Remove from Cart
+          </Button>
+        ) : (
+          <Button onClick={() => onAddToCart(food)}>Add to Cart</Button>
+        )}
       </div>
     </article>
   );

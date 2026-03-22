@@ -147,12 +147,12 @@ function ManageOrders() {
 
   const summary = useMemo(
     () => ({
-      active: orders.filter((order) => !FINAL_STATUSES.includes(order.status)).length,
-      completed: orders.filter((order) => order.status === "Completed").length,
-      hold: orders.filter((order) => order.status === "Hold").length,
-      canceled: orders.filter((order) => order.status === "Canceled").length,
+      active: allOrders.filter((order) => !FINAL_STATUSES.includes(order.status)).length,
+      completed: allOrders.filter((order) => order.status === "Completed").length,
+      hold: allOrders.filter((order) => order.status === "Hold").length,
+      canceled: allOrders.filter((order) => order.status === "Canceled").length,
     }),
-    [orders]
+    [allOrders]
   );
 
   const createOrderTotal = useMemo(

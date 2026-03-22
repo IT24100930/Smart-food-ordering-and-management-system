@@ -341,7 +341,7 @@ td {
 
 .admin-grid {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
   margin-top: 1rem;

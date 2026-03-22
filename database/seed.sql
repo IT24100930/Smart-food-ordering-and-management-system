@@ -20,10 +20,14 @@ WHERE NOT EXISTS (SELECT 1 FROM users);
 INSERT INTO foods (name, category_id, price, rating, stock, prep_time, description, image)
 SELECT 'Chicken Kottu', c.id, 8.50, 4.7, 24, '15 min',
        'A popular Sri Lankan style street food with chicken and vegetables.',
-       'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80'
+       'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'
 FROM categories c
 WHERE c.name = 'Rice'
 AND NOT EXISTS (SELECT 1 FROM foods WHERE name = 'Chicken Kottu');
+
+UPDATE foods
+SET image = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'
+WHERE name = 'Chicken Kottu';
 
 INSERT INTO foods (name, category_id, price, rating, stock, prep_time, description, image)
 SELECT 'Cheese Burger', c.id, 6.75, 4.5, 18, '10 min',

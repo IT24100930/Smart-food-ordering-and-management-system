@@ -1,7 +1,39 @@
+.page-header {
+  margin-bottom: 1rem;
+}
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-card-revenue {
+  grid-column: 1 / -1;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.chart-card {
+  order: 1;
+}
+
+.table-card {
+  order: 2;
 }
 
 .category-card,
@@ -11,3 +43,93 @@
   padding: 1.2rem;
   box-shadow: var(--shadow-soft);
 }
+
+@media (max-width: 900px) {
+  .dashboard-grid,
+  .admin-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-card-revenue {
+    grid-column: 1 / -1;
+  }
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    padding: 1rem;
+  }
+
+  .category-card,
+  .dashboard-card,
+  .table-card,
+  .food-form {
+    padding: 1rem;
+  }
+
+  /* rearrange admin dashboard layout for column flow on smaller screens */
+  .dashboard-card-revenue {
+    order: 99;
+  }
+
+  .admin-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .chart-card {
+    order: 1;
+  }
+
+  .table-card {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-grid,
+  .admin-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    font-size: 0.95rem;
+  }
+
+  .category-card,
+  .dashboard-card,
+  .table-card,
+  .food-form {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #fff;
+  }
+}
+
+.category-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.category-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.category-card p {
+  margin: 0;
+  color: #555;
+  font-weight: 600;
+}
+

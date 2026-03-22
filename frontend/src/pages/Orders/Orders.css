@@ -1,25 +1,149 @@
-.order-list {
+.orders-page {
   display: grid;
   gap: 1rem;
 }
 
+.order-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+}
+
 .order-card {
-  background: white;
-  border-radius: 20px;
-  padding: 1.25rem;
-  box-shadow: var(--shadow-soft);
+  background:
+    radial-gradient(circle at top right, rgba(251, 219, 166, 0.3), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 249, 241, 0.94));
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(71, 46, 18, 0.08);
+  border: 1px solid rgba(229, 216, 198, 0.75);
+  display: grid;
+  gap: 1rem;
+  min-height: 100%;
+}
+
+.order-card-heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.order-card-label,
+.order-detail-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.order-card h3,
+.order-card p,
+.order-card strong {
+  margin: 0;
+}
+
+.order-card-heading h3 {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  color: var(--secondary);
+  overflow-wrap: anywhere;
+}
+
+.order-card-heading p {
+  color: var(--text-soft);
+}
+
+.order-card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(180px, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.order-card-main,
+.order-card-side,
+.order-progress-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.order-detail-block,
+.order-total-panel,
+.order-progress-panel {
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(229, 216, 198, 0.68);
+}
+
+.order-detail-block strong,
+.order-total-panel strong,
+.order-progress-copy strong {
+  color: var(--secondary);
+}
+
+.order-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.order-item-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(251, 240, 222, 0.95), rgba(248, 232, 205, 0.9));
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.order-total-panel {
+  min-height: 100%;
+  align-content: start;
+}
+
+.order-total-panel strong {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+.order-progress-copy {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .tracking-bar {
   width: 100%;
-  height: 10px;
+  height: 0.8rem;
   background: #ece5d9;
   border-radius: 999px;
   overflow: hidden;
-  margin: 1rem 0;
+  margin: 0;
+  box-shadow: inset 0 1px 2px rgba(95, 64, 29, 0.08);
 }
 
 .tracking-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: inherit;
+}
+
+@media (max-width: 900px) {
+  .order-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .order-card {
+    padding: 1rem;
+  }
+
+  .order-progress-copy {
+    align-items: flex-start;
+  }
 }

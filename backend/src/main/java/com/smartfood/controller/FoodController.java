@@ -25,4 +25,14 @@ public class FoodController {
     public FoodResponse createFood(@Valid @RequestBody FoodRequest request) {
         return foodService.createFood(request);
     }
+
+    @PutMapping("/{id}")
+    public FoodResponse updateFood(@PathVariable Long id, @Valid @RequestBody FoodRequest request) {
+        return foodService.updateFood(id, request);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFood(@PathVariable Long id) {
+        foodService.deleteFood(id);
+    }
 }

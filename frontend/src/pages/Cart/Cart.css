@@ -1,20 +1,38 @@
 .cart-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  /* a slightly smaller product column and larger summary for better visibility */
+  grid-template-columns: 1.4fr 0.9fr;
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .cart-list {
   display: grid;
   gap: 1rem;
+  row-gap: 1rem;
 }
 
 .cart-item,
 .summary-card {
   background: white;
   border-radius: 20px;
-  padding: 1.2rem;
+  padding: 1rem;
   box-shadow: var(--shadow-soft);
+}
+
+.cart-item {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+}
+
+.summary-card {
+  border-left: 4px solid var(--primary);
+  padding: 1.25rem;
 }
 
 .cart-actions,
