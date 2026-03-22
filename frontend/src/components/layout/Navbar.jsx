@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
 import Button from "../common/Button";
+import { APP_NAME } from "../../utils/constants";
 
 function Navbar() {
   const { user, logout } = useAuth();
@@ -10,7 +11,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link className="brand" to="/">
-        SmartFood
+        {APP_NAME}
       </Link>
 
       <nav className="nav-links">

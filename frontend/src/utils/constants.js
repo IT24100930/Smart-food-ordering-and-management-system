@@ -1,3 +1,5 @@
+export const APP_NAME = "Urban Plate";
+
 export const FOOD_CATEGORIES = ["All", "Rice", "Burger", "Pizza", "Drinks"];
 
 export const DEMO_FOODS = [

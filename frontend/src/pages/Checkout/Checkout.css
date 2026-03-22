@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .checkout-form {
@@ -10,3 +11,8 @@
   border-radius: 20px;
   box-shadow: var(--shadow-soft);
 }
+
+.page-header + .checkout-layout {
+  margin-top: 1rem;
+}
+

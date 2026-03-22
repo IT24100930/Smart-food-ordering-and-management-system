@@ -39,7 +39,13 @@ function Dashboard() {
         <DashboardCard title="Foods" value={summary.totalFoods} helpText="Menu items in the system" tone="warm" />
         <DashboardCard title="Users" value={summary.totalUsers} helpText="Registered demo users" tone="cool" />
         <DashboardCard title="Orders" value={summary.totalOrders} helpText="Orders in the system" tone="accent" />
-        <DashboardCard title="Revenue" value={formatCurrency(summary.revenue)} helpText="Estimated income" tone="success" />
+        <DashboardCard
+          title="Revenue"
+          value={formatCurrency(summary.revenue)}
+          helpText="Estimated income"
+          tone="success"
+          className="dashboard-card-revenue"
+        />
       </div>
       <div className="admin-grid">
         <SalesChart orders={orders} />
