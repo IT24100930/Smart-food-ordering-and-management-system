@@ -10,7 +10,7 @@ export const DEMO_FOODS = [
     stock: 24,
     prepTime: "15 min",
     description: "A popular Sri Lankan style street food with chicken and vegetables.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,

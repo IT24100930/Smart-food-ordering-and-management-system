@@ -1,6 +1,9 @@
 import { apiRequest } from "./api";
 
-export const getCategories = async () => {
-  const categories = await apiRequest("/categories");
-  return categories.map((category) => category.name);
-};
+export const getCategories = async () => apiRequest("/categories");
+
+export const createCategory = async (payload) =>
+  apiRequest("/categories", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });

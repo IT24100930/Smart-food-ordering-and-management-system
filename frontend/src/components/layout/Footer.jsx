@@ -6,7 +6,7 @@ function Footer() {
           <strong>Smart Food Ordering and Management System</strong>
           <p>Simple food ordering, tracking, and admin management in one place.</p>
         </div>
-        <span className="footer-badge">React + Spring Boot + MySQL</span>
+        <span className="footer-badge">ITP_IT_127</span>
       </div>
     </footer>
   );

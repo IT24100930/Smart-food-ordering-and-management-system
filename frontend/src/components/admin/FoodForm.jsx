@@ -1,11 +1,28 @@
 import Button from "../common/Button";
 import Input from "../common/Input";
 
-function FoodForm({ formData, onChange, onSubmit }) {
+function FoodForm({
+  formData,
+  categories = [],
+  onChange,
+  onSubmit,
+  submitLabel = "Save Food",
+  loading = false,
+}) {
   return (
     <form className="food-form" onSubmit={onSubmit}>
       <Input label="Food Name" name="name" value={formData.name} onChange={onChange} />
-      <Input label="Category" name="category" value={formData.category} onChange={onChange} />
+      <label className="form-group">
+        <span>Category</span>
+        <select name="category" value={formData.category} onChange={onChange}>
+          <option value="">Select a category</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      </label>
       <Input
         label="Price"
         name="price"
@@ -20,7 +37,7 @@ function FoodForm({ formData, onChange, onSubmit }) {
         value={formData.stock}
         onChange={onChange}
       />
-      <Button type="submit">Save Food</Button>
+      <Button type="submit" loading={loading}>{submitLabel}</Button>
     </form>
   );
 }

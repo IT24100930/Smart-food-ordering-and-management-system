@@ -7,3 +7,14 @@ export const createFood = async (payload) =>
     method: "POST",
     body: JSON.stringify(payload),
   });
+
+export const updateFood = async (id, payload) =>
+  apiRequest(`/foods/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+  });
+
+export const deleteFood = async (id) =>
+  apiRequest(`/foods/${id}`, {
+    method: "DELETE",
+  });

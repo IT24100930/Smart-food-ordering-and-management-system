@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class DataSeeder {
 
     private final PasswordEncoder passwordEncoder;
+    private static final String CHICKEN_KOTTU_IMAGE =
+            "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80";
 
     @Bean
     CommandLineRunner seedData(CategoryRepository categoryRepository,
@@ -46,6 +48,13 @@ public class DataSeeder {
                         .build());
             }
 
+            foodRepository.findByName("Chicken Kottu").ifPresent(food -> {
+                if (!CHICKEN_KOTTU_IMAGE.equals(food.getImage())) {
+                    food.setImage(CHICKEN_KOTTU_IMAGE);
+                    foodRepository.save(food);
+                }
+            });
+
             if (foodRepository.count() == 0) {
                 foodRepository.save(Food.builder()
                         .name("Chicken Kottu")
@@ -55,7 +64,7 @@ public class DataSeeder {
                         .stock(24)
                         .prepTime("15 min")
                         .description("A popular Sri Lankan style street food with chicken and vegetables.")
-                        .image("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80")
+                        .image(CHICKEN_KOTTU_IMAGE)
                         .build());
                 foodRepository.save(Food.builder()
                         .name("Cheese Burger")
